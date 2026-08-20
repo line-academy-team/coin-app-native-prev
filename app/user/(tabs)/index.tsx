@@ -4,7 +4,7 @@ import { Text, View } from "react-native";
     return (
         <View>
             <Text>
-                4.메인페이지
+                4.메인페이지!
             </Text>
         </View>
     );
