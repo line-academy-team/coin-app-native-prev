@@ -27,3 +27,8 @@ export interface PortfolioCoinOption {
 export interface PortfolioAllocation extends PortfolioCoinOption {
     allocation: number;
 }
+
+export type CalculatedPortfolio = Portfolio & {
+    returnRate: number;
+    currentTotalValue: number;
+};
