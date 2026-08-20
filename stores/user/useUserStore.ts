@@ -4,7 +4,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Platform } from "react-native";
 import * as SecureStore from "expo-secure-store";
 import { User } from "@/types/user";
-import userApi from "@/api/user/userApi";
 
 type UserState = {
     isLoggedIn: boolean;
@@ -131,6 +130,8 @@ export const useUserStore = create<UserState>()(
                 });
 
                 try {
+                    const userApi = require("@/api/user/userApi").default;
+
                     const user = await userApi.getMe();
 
                     set({
