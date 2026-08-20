@@ -1,12 +1,29 @@
-import { PortfolioItem } from "@/types/portfolioItem";
+import { CreatePortfolioItemRequest, PortfolioItem } from "@/types/portfolioItem";
 import { Ionicons } from "@expo/vector-icons";
 
 export interface Portfolio {
     id: number;
+    createdAt: string;
     title: string;
-    totalAmount: number;
-    returnRate: number;
+    totalSeedMoney: number;
     tags: string;
     icon: keyof typeof Ionicons.glyphMap;
-    items: PortfolioItem[];
+    coins: PortfolioItem[];
+}
+
+export interface CreatePortfolioRequest {
+    title: string;
+    totalSeedMoney: number;
+    items: CreatePortfolioItemRequest[];
+}
+
+export interface PortfolioCoinOption {
+    market: string;
+    symbol: string;
+    koreanName: string;
+    currentPrice: number;
+}
+
+export interface PortfolioAllocation extends PortfolioCoinOption {
+    allocation: number;
 }

@@ -5,3 +5,10 @@ export interface PortfolioItem {
     buyPrice: number;
     quantity: number;
 }
+
+export interface CreatePortfolioItemRequest {
+    market: string;
+    targetRatio: number;
+    buyPrice: number;
+    quantity: number;
+}

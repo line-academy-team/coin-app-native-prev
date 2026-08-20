@@ -1,5 +1,5 @@
 import axiosInstance from "@/api/axiosInstance";
-import { Portfolio } from "@/types/portfolio";
+import { CreatePortfolioRequest, Portfolio } from "@/types/portfolio";
 
 // 포트폴리오 목록 조회
 const getMyPortfolios = async (): Promise<Portfolio[]> => {
@@ -7,6 +7,12 @@ const getMyPortfolios = async (): Promise<Portfolio[]> => {
     return response.data.data;
 };
 
+const createPortfolio = async (data: CreatePortfolioRequest): Promise<Portfolio> => {
+    const response = await axiosInstance.post("/portfolios/create", data);
+    return response.data.data;
+};
+
 export default {
     getMyPortfolios,
+    createPortfolio,
 };

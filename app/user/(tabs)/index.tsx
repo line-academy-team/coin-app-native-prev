@@ -197,7 +197,7 @@ function Dashboard() {
                 <View className="absolute bottom-0 left-0 right-0 bg-[#F8FAFC]">
                     <Button
                         variant="solid"
-                        onPress={() => router.push("/portfolio/create")}
+                        onPress={() => router.push("/user/portfolio/create")}
                         className="h-[56px] rounded-xl"
                         textClassName="text-[16px]">
                         + 포트폴리오 만들기
