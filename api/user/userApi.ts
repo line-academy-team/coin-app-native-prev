@@ -1,5 +1,5 @@
 import axiosInstance from "@/api/axiosInstance";
-import { AuthUser, GetMeResponse, LoginResponse, User } from "../../types/user";
+import { LoginResponse, User } from "@/types/user";
 import { RegisterUserInputType } from "@/schemas/user/registerUserSchema";
 import { LoginRequestType } from "@/schemas/user/loginUserSchema";
 
@@ -14,7 +14,13 @@ const loginUser = async (data: LoginRequestType): Promise<LoginResponse> => {
     return response.data.data;
 };
 
+const getMe = async (): Promise<User> => {
+    const response = await axiosInstance.get("/users/me");
+    return response.data.data;
+};
+
 export default {
     registerUser,
     loginUser,
+    getMe,
 };
