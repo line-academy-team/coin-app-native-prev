@@ -1,13 +1,20 @@
 import axiosInstance from "@/api/axiosInstance";
 import { AuthUser, GetMeResponse, LoginResponse, User } from "../../types/user";
 import { RegisterUserInputType } from "@/schemas/user/registerUserSchema";
+import { LoginRequestType } from "@/schemas/user/loginUserSchema";
 
 const registerUser = async (data: RegisterUserInputType): Promise<User> => {
     const { confirmPassword, ...submitData } = data;
-    const response = await axiosInstance.post("/user/create", submitData);
+    const response = await axiosInstance.post("/users/create", submitData);
+    return response.data.data;
+};
+
+const loginUser = async (data: LoginRequestType): Promise<LoginResponse> => {
+    const response = await axiosInstance.post("/users/login", data);
     return response.data.data;
 };
 
 export default {
     registerUser,
+    loginUser,
 };

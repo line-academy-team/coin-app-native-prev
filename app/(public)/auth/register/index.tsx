@@ -14,7 +14,7 @@ import { isAxiosError } from "axios";
 import { Ionicons } from "@expo/vector-icons";
 import InputGroup from "@/components/common/input/InputGroup";
 import ErrorMessage from "@/components/common/form/ErrorMessage";
-import { RegisterUserInputType, RegisterUserSchema } from "@/schemas/user/registerUserSchema";
+import { RegisterUserInputType, registerUserSchema } from "@/schemas/user/registerUserSchema";
 import Button from "@/components/common/button/Button";
 import userApi from "@/api/user/userApi";
 function AuthRegisterPage() {
@@ -26,7 +26,7 @@ function AuthRegisterPage() {
         setError,
         formState: { errors, isSubmitting },
     } = useForm({
-        resolver: zodResolver(RegisterUserSchema),
+        resolver: zodResolver(registerUserSchema),
         mode: "onTouched",
         defaultValues: {
             email: "",

@@ -3,7 +3,6 @@ import { createJSONStorage, persist, StateStorage } from "zustand/middleware";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Platform } from "react-native";
 import * as SecureStore from "expo-secure-store";
-
 import { User } from "@/types/user";
 
 type UserState = {
